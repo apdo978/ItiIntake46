@@ -1,0 +1,161 @@
+In HTML, <fieldset> and <legend> are used together to group 
+related form controls and label that group, both for visual clarity and accessibility.
+Example usage:
+<fieldset>
+  <legend>Personal Information</legend>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name"><br><br>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+</fieldset>
+
+<legend>
+Purpose: Provides a caption or title for the <fieldset> group.
+
+Multipart form data is a special content type used in HTTP requests (An enctype value for uploading files)
+ when a form needs to send files or binary data (like images, PDFs, videos) along with normal text fields.
+ <form method="post" enctype="multipart/form-data">
+ Each field’s data is separated by a boundary string in the request body.
+This format allows:
+Binary data (file uploads)
+Text fields
+Both together in the same request
+
+Currying in JavaScript is a functional programming technique where you transform 
+a function that takes multiple arguments into a sequence of functions each taking a single argument.
+function add(a) {
+  return function(b) {
+    return a + b;
+  };
+}
+
+console.log(add(2)(3)); // 5
+
+Which algorithm sorts elements digit by digit?
+Quick Sort
+
+CSS defines four main link states that you can style using pseudo-classes:
+
+:link → A link that has not been visited yet.
+
+:visited → A link that has been visited before.
+
+:hover → A link when the mouse pointer is over it.
+
+:active → A link at the moment it is clicked (activated).
+
+In SQL Server, the WITH (NOLOCK) table hint tells the query engine to read data without taking shared locks
+The query won’t block other transactions that are writing to the same table.
+
+The query itself won’t be blocked by locks from other transactions.
+
+It allows dirty reads — the data you read might be uncommitted, in the process of changing, or even rolled back later.
+
+✅ Use @supports rule: @supports (display: grid)
+@supports (display: grid) {
+  .container {
+    display: grid;
+  }
+}
+
+@supports not (display: grid) {
+  .container {
+    float: left; /* fallback for older browsers */
+  }
+}
+
+A conversion constructor in C++ is a constructor that takes exactly one argument 
+(or one argument plus default values for the rest) and can be used to convert from that argument’s type to the class type.
+#include <iostream>
+using namespace std;
+
+class Distance {
+    int meters;
+public:
+    // Conversion constructor
+    Distance(int m) : meters(m) {
+        cout << "Conversion constructor called\n";
+    }
+
+    void display() {
+        cout << meters << " meters\n";
+    }
+};
+
+int main() {
+    Distance d1 = 5;  // Implicit conversion from int to Distance
+    d1.display();
+
+    Distance d2(10);  // Direct initialization
+    d2.display();
+}
+
+What are partitioned tables, and when should we use them?
+split into multiple physical segments (partitions),
+ usually based on the values in one column — often a date, ID range, or category.
+ CREATE TABLE sales (
+    id INT,
+    order_date DATE,
+    amount DECIMAL(10,2)
+) PARTITION BY RANGE (YEAR(order_date)) (
+    PARTITION p2023 VALUES LESS THAN (2024),
+    PARTITION p2024 VALUES LESS THAN (2025)
+);
+What is a stored procedure?
+A precompiled set of SQL statements
+What is a database snapshot, and how is it used?
+A read-only static view for reporting or recovery
+What is the use of the <em> tag?
+Emphasizes text, usually in italic
+
+What is a Final Class?
+A final class is a class that cannot be inherited (extended) by any other class.
+class Base final  {
+    public static double PI = 3.14159;
+    public static int square(int x) {
+        return x * x;
+    }
+}
+
+// ❌ This will cause a compile-time error:
+class MyMath extends MathUtils {} 
+
+The <datalist> tag in HTML is used to provide a list of predefined options for an <input> element, 
+so the user can either choose from the suggestions or type their own value;
+<label for="browser">Choose your browser:</label>
+<input list="browsers" id="browser" name="browser">
+
+<datalist id="browsers">
+  <option value="Chrome">
+  <option value="Firefox">
+  <option value="Edge">
+  <option value="Safari">
+  <option value="Opera">
+</datalist>
+
+Question 
+ What is the difference between exec() and test() methods? in JavaScript
+ 
+exec: returns matched pattern; test: returns true/false
+let regex = /hello/;
+let str = "hello world";
+let result = regex.exec(str);
+
+console.log(result);
+// Output: ["hello"]
+console.log(result.index); // 0 (position of the match)
+console.log(result.input); // "hello world"
+
+let regex = /hello/;
+let str = "hello world";
+console.log(regex.test(str)); // true
+
+let str2 = "goodbye";
+console.log(regex.test(str2)); // false
+
+
+
+Why use `translate()` instead of `position` for animations?
+
+`translate()` is GPU-accelerated and avoids layout recalculations

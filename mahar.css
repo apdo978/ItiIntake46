@@ -1,0 +1,139 @@
+/* selector {
+
+style in browser for better styling 
+    prop:value
+} 
+
+*{} universal selector with low specifity 
+
+combinators 
+all of this selected 
+h2,h3,div,h1{}
+*******
+one inside the other  father and son
+h1 p div span  
+********
+direct parent 
+div > p{}
+********
+one ended and style the one the first one after 
+div +p {}
+********
+div ~ p{} any element after first (all)
+********
+to select with attrebuote 
+[attr]
+{}
+********
+to select with attrebuote 
+[attr = "value"]
+[attr ^= "value"] start with this value
+[attr $= "value"] end with this value
+[attr *= "value"] include this value
+[attr ~= "value"] include  this whole value
+div[attr = "value"] differant from 
+div [attr = "value"]
+{}
+********
+div::after
+{
+content:""  mandatory
+}
+div::before
+{
+content:""  mandatory
+}
+
+div::firstline
+{
+content:""  mandatory
+}
+
+div::selection with mouse 
+{
+content:""  mandatory
+}
+
+div::hover
+{
+content:""  mandatory
+}
+
+css reset file to be suitable with all browsers
+box-model 
+
+div{
+    border-width: ;
+    border-color: ;
+    border-style: ;
+}
+{
+wiedth:% of the container
+height:% of the container parent element
+}
+box model 
+box-content : default 
+border-box: make all width that one i gave 
+{
+}
+virtical margin collapse 
+div by default display : block span : inline  (width and height are not logic in this case )
+inline-block (have margin width height )
+
+
+visibility:hidden
+short-hand
+border:10px solid green
+*************
+center the div 
+
+
+margin:30(up and dowen) auto(right and left )
+div{
+    margin: 111 ;
+    border-color:
+}
+rgb()
+hsl()
+
+div{
+    border-radius: 20px 50/100;
+}50% == 100%
+url() to provide i,g in css 
+
+********
+positionning
+position:default value static 
+top:10;
+absolute-fixed(float not on document flow )-view port 
+******
+display property 
+display:list-item
+display:table
+display:flex
+parent 
+felx-wrap:nowrap-wrap (by5aly el itmes tenzel ta7t ba3d )-wrap-reverse
+flex-flow: short hand for both  wrap-position
+display:
+display:
+align-content => work with wraping
+children flex-items
+1-order to order the items 
+align-self
+flex-basis = height or width according to direction have priorty on regular width or heigth
+flex-shrink:1 shrink 2or 3 shreink this item more or faster   0 no shrink  
+flex-grow:1 grow 2or 3 grow this item more or faster   0 no grow  
+display:grid
+
+
+    div{
+         fire fox is better in grid  
+        display: grid;
+grid-template-columns: 300px 100px max-content min-content minmax(100px,500px) fit-content(100px) repeat(4,25%) auto;
+grid-template-rows: 300px 100px max-content min-content minmax(100px,500px) fit-content(100px) repeat(4,25%) auto;
+grid-auto-rows: ;
+grid-template-areas: ;
+    }
+    html > body
+img take only heoght or width dont do both 
+    */
