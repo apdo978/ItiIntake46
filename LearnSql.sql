@@ -613,4 +613,79 @@ using (category_id)
 -- atomicity => all or  => all as one all or none 
 -- consistency => data must be valid according to all defined rules
 -- isolation => locks => no one cannot read or write on this table untill the transaction done  transactions are isolated from each other
--- durability => once a transaction is committed, it will remain so, even in the event of a system failure
+-- durability => once a transaction is committed, it will remain so, even in the event of a system failure roll back 
+--auto commit  => treating each commit as single state comit => if one failed no problem 
+-- so u should disable auto commit to treat transactions as whole 
+
+-- auto commit 
+-- set autocommit = off;0
+-- set autocommit = on;1 
+
+start transaction
+update t1 set columnname = 15 where columnanme = 'value' 
+
+commit;-- or rollback
+
+--stored objects 
+-- funcs 
+-- triggers 
+-- stored proceduers 
+
+
+create function func_name (param type,param2 type) returns type--user defiend function
+begin
+--statement 
+end;
+
+create function get_age(Pdate date) returns int
+determenstic
+begin
+-- to define an object in sql function 
+declare var int;
+set var = year(curdate()) - year(Pdate);
+return var;
+end;
+
+some time in function defenation u should cange the delimter 
+delimter $$
+create function get_age(Pdate date) returns int
+determenstic
+begin
+-- to define an object in sql function 
+declare var int;
+set var = year(curdate()) - year(Pdate);
+return var;
+end $$
+delimiter ;
+
+
+--proceduers
+
+create proceduer sp1(in param_id int , out param_name varchar(20))
+begin
+--statement
+end;
+call sp1(); -- not in select state ment  not returnning scaler => table  best practice for securty arch 
+
+--triggers == like procedure  => executed based on event 
+
+--control flow 
+-- if elseif else 
+if (condition,'value'(iftrue),'value'(iffalse))
+
+select title,firstname,if(salary>5,'high','low')
+
+-- case when then else end 
+select title,firstname,
+case 
+when price > 3 then 'high'
+when price <2 then 'medium'
+else 'low' =>-- default value 
+end as rental_state
+ 
+-- while end while  => only stored in stored procedure
+while condition do 
+end while ;
+
+--window function  with grroub by 
+-- over(partion by columnname ) => depned on only one count  
